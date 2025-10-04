@@ -12,6 +12,7 @@ This project is a [FastAPI](https://fastapi.tiangolo.com/) application designed 
 - **Easy**: Designed to be easy to use and learn.
 - **Interactive API Docs**: Automatically generated, interactive API documentation using Swagger UI and ReDoc.
 
+## Folder Structure
 ```
 FastApi/
 │
@@ -25,7 +26,7 @@ FastApi/
 ├── requirements.txt      # Dependencies
 ├── README.md             # Documentation
 └── .gitignore            # Files to exclude from Git
-
+```
 ## Installation
 
 ### Clone the repository
