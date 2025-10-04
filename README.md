@@ -1,5 +1,4 @@
 # FastAPI Project
-# FastAPI Project
 
 ![FastAPI Logo](https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png)
 
@@ -12,6 +11,19 @@ This project is a [FastAPI](https://fastapi.tiangolo.com/) application designed 
 - **Fewer bugs**: Catch common bugs early in development.
 - **Easy**: Designed to be easy to use and learn.
 - **Interactive API Docs**: Automatically generated, interactive API documentation using Swagger UI and ReDoc.
+
+FastApi/
+│
+├── app/
+│   ├── main.py           # FastAPI app entry point
+│   ├── routes/           # API route definitions
+│   ├── models.py         # Pydantic or ORM models
+│   ├── schemas.py        # Data validation schemas
+│   └── database.py       # DB connection logic
+│
+├── requirements.txt      # Dependencies
+├── README.md             # Documentation
+└── .gitignore            # Files to exclude from Git
 
 ## Installation
 
@@ -72,15 +84,4 @@ The app will start at: http://127.0.0.1:8000
 Interactive API docs (Swagger): http://127.0.0.1:8000/docs
 Alternative docs (ReDoc): http://127.0.0.1:8000/redoc
 
-FastApi/
-│
-├── app/
-│   ├── main.py           # FastAPI app entry point
-│   ├── routes/           # API route definitions
-│   ├── models.py         # Pydantic or ORM models
-│   ├── schemas.py        # Data validation schemas
-│   └── database.py       # DB connection logic
-│
-├── requirements.txt      # Dependencies
-├── README.md             # Documentation
-└── .gitignore            # Files to exclude from Git
+
