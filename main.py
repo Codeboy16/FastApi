@@ -1,19 +1,14 @@
 from fastapi import FastAPI
-from routes import students
+from routes import students, teacher
 from pydantic import BaseModel, EmailStr
 app = FastAPI()
-
-name={
-    "name":"Rohit",
-    "age":24,
-    "city":"Indore"
-}
 
 
 # GET REQUEST
 @app.get("/")
 async def read_root():
-    return ({"Message": "Hello Dev! Fast Api Is Working", "Status": "Success"},name)
+    return ({"Message": "Hello Dev! Fast Api Is Working", "Status": "Success",
+             "Api Routes": ["/student", "/teacher", "/search"]})
 
 #Search Paramater or Query Paramater
 @app.get("/search")
@@ -25,4 +20,4 @@ def search(stdid: int = 16, stdname: str=None):
 
 # Add The Routes
 app.include_router(students.router)
-
+app.include_router(teacher.router)
