@@ -1,0 +1,41 @@
+python -m venv backend    //For Local Environemtn
+C:\Users\rs164\Desktop\fastapi\backend\Scripts\Activate.ps1  //change the path
+pip list  //to Chek the Package L=Installed in Local
+pip install fastapi uvicorn   //Install fastApi and uvicorn
+uvicorn main:app --reload    //To Start The Server main means file name and app for the app = FastAPI()
+
+
+Path()== ge,gt,le,lt,Min_length,Max_length
+from fastapi import FastApi,Path,Query
+@app.get("/stduent/{id}")
+def student_det(id:int = Path(ge=1)):
+   return ("Hello")
+
+@app.get("/stduent/{id}")
+def student_det(id:int = Query()):
+   return ("Hello")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Notes**
+<Routes>=Without routers: All your API endpoints are in main.py, and it gets messy as your app grows.
+📦With routers: You split your endpoints into separate files or sections (like users, products, orders) — much cleaner and easier to manage.
+
+<Schema>=In FastAPI, a schema typically refers to a Pydantic model that defines the shape of the data (like a structure or blueprint). You use it to:Validate input (data from the user).
