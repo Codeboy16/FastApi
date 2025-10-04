@@ -12,6 +12,7 @@ This project is a [FastAPI](https://fastapi.tiangolo.com/) application designed 
 - **Easy**: Designed to be easy to use and learn.
 - **Interactive API Docs**: Automatically generated, interactive API documentation using Swagger UI and ReDoc.
 
+```
 FastApi/
 │
 ├── app/
