@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room1.jpeg",
     "pgType": 1,
     "pgName": "Premium PG near M.G. Marg",
     "address": "M.G. Marg, Gangtok, Sikkim",
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room2.jpg",
     "pgType": 0,
     "pgName": "Luxury PG in Tadong",
     "address": "Tadong, Gangtok, Sikkim",
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room3.jpg",
     "pgType": 1,
     "pgName": "Affordable PG near Enchey Monastery",
     "address": "Enchey Monastery Road, Gangtok, Sikkim",
@@ -34,7 +34,7 @@
   },
   {
     "id": 4,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room4.jpg",
     "pgType": 0,
     "pgName": "Budget PG near Namgyal Institute",
     "address": "Namgyal Institute, Gangtok, Sikkim",
@@ -45,7 +45,7 @@
   },
   {
     "id": 5,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room5.webp",
     "pgType": 1,
     "pgName": "PG near Tashi View Point",
     "address": "Tashi View Point, Gangtok, Sikkim",
@@ -56,7 +56,7 @@
   },
   {
     "id": 6,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room6.avif",
     "pgType": 0,
     "pgName": "Comfortable PG near Ganesh Tok",
     "address": "Ganesh Tok, Gangtok, Sikkim",
@@ -67,7 +67,7 @@
   },
   {
     "id": 7,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room7.webp",
     "pgType": 1,
     "pgName": "Budget PG near MG Marg",
     "address": "M.G. Marg, Gangtok, Sikkim",
@@ -78,7 +78,7 @@
   },
   {
     "id": 8,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room8.avif",
     "pgType": 1,
     "pgName": "Standard PG in Sichey",
     "address": "Sichey, Gangtok, Sikkim",
@@ -89,7 +89,7 @@
   },
   {
     "id": 9,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room9.avif",
     "pgType": 1,
     "pgName": "PG near Banjhakri Falls",
     "address": "Banjhakri Falls, Gangtok, Sikkim",
@@ -100,7 +100,7 @@
   },
   {
     "id": 10,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/10.avif",
     "pgType": 1,
     "pgName": "Affordable PG near Tashi View Point",
     "address": "Tashi View Point, Gangtok, Sikkim",
@@ -111,7 +111,7 @@
   },
   {
     "id": 11,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room2.jpg",
     "pgType": 1,
     "pgName": "Simple PG in Gangtok",
     "address": "Gangtok, Sikkim",
@@ -122,7 +122,7 @@
   },
   {
     "id": 12,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room4.jpg",
     "pgType": 1,
     "pgName": "Modern PG near Tibetology Centre",
     "address": "Tibetology Centre, Gangtok, Sikkim",
@@ -133,7 +133,7 @@
   },
   {
     "id": 13,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room8.avif",
     "pgType": 1,
     "pgName": "Cosy PG near White Hall",
     "address": "White Hall, Gangtok, Sikkim",
@@ -144,7 +144,7 @@
   },
   {
     "id": 14,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room6.avif",
     "pgType": 1,
     "pgName": "Budget PG near Palzor Stadium",
     "address": "Palzor Stadium, Gangtok, Sikkim",
@@ -155,7 +155,7 @@
   },
   {
     "id": 15,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room8.avif",
     "pgType": 1,
     "pgName": "PG near Rumtek Monastery",
     "address": "Rumtek Monastery, Gangtok, Sikkim",
@@ -166,7 +166,7 @@
   },
   {
     "id": 16,
-    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "image": "images/room1.jpeg",
     "pgType": 1,
     "pgName": "Economy PG near Tinkitam",
     "address": "Tinkitam, Gangtok, Sikkim",

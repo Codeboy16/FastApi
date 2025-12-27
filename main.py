@@ -1,8 +1,11 @@
 from fastapi import FastAPI
 from routes import students, teacher, findPg
 from pydantic import BaseModel, EmailStr,Field,conint
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
+from pathlib import Path
 app = FastAPI()
-
+app.mount("/images", StaticFiles(directory="images"), name="images")
 
 # GET REQUEST
 @app.get("/")
