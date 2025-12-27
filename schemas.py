@@ -23,4 +23,14 @@ class TeacherSchema(BaseModel):
     name: str
     subject: str
     years_of_experience: Optional[int] = 1
-    # email: Optional[EmailStr] = None    
+    # email: Optional[EmailStr] = None   
+
+#PG Schema
+class PgListSchema(BaseModel):
+     name:str
+     address: str
+     price: int
+     contact:int
+     image: list
+     rating:int
+

@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Premium PG near M.G. Marg",
+    "address": "M.G. Marg, Gangtok, Sikkim",
+    "price": 1800,
+    "rating": 4,
+    "contact": 9876543210,
+    "map": "https://goo.gl/maps/xyz1"
+  },
+  {
+    "id": 2,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 0,
+    "pgName": "Luxury PG in Tadong",
+    "address": "Tadong, Gangtok, Sikkim",
+    "price": 5500,
+    "rating": 5,
+    "contact": 9876543220,
+    "map": "https://goo.gl/maps/xyz2"
+  },
+  {
+    "id": 3,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Affordable PG near Enchey Monastery",
+    "address": "Enchey Monastery Road, Gangtok, Sikkim",
+    "price": 3000,
+    "rating": 3,
+    "contact": 9876543230,
+    "map": "https://goo.gl/maps/xyz3"
+  },
+  {
+    "id": 4,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 0,
+    "pgName": "Budget PG near Namgyal Institute",
+    "address": "Namgyal Institute, Gangtok, Sikkim",
+    "price": 4000,
+    "rating": 5,
+    "contact": 9876543240,
+    "map": "https://goo.gl/maps/xyz4"
+  },
+  {
+    "id": 5,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "PG near Tashi View Point",
+    "address": "Tashi View Point, Gangtok, Sikkim",
+    "price": 2200,
+    "rating": 4,
+    "contact": 9876543250,
+    "map": "https://goo.gl/maps/xyz5"
+  },
+  {
+    "id": 6,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 0,
+    "pgName": "Comfortable PG near Ganesh Tok",
+    "address": "Ganesh Tok, Gangtok, Sikkim",
+    "price": 3500,
+    "rating": 3,
+    "contact": 9876543260,
+    "map": "https://goo.gl/maps/xyz6"
+  },
+  {
+    "id": 7,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Budget PG near MG Marg",
+    "address": "M.G. Marg, Gangtok, Sikkim",
+    "price": 2500,
+    "rating": 4,
+    "contact": 9876543270,
+    "map": "https://goo.gl/maps/xyz7"
+  },
+  {
+    "id": 8,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Standard PG in Sichey",
+    "address": "Sichey, Gangtok, Sikkim",
+    "price": 3000,
+    "rating": 4,
+    "contact": 9876543280,
+    "map": "https://goo.gl/maps/xyz8"
+  },
+  {
+    "id": 9,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "PG near Banjhakri Falls",
+    "address": "Banjhakri Falls, Gangtok, Sikkim",
+    "price": 3500,
+    "rating": 4,
+    "contact": 9876543290,
+    "map": "https://goo.gl/maps/xyz9"
+  },
+  {
+    "id": 10,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Affordable PG near Tashi View Point",
+    "address": "Tashi View Point, Gangtok, Sikkim",
+    "price": 2800,
+    "rating": 5,
+    "contact": 9876543300,
+    "map": "https://goo.gl/maps/xyz10"
+  },
+  {
+    "id": 11,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Simple PG in Gangtok",
+    "address": "Gangtok, Sikkim",
+    "price": 1800,
+    "rating": 3,
+    "contact": 9876543310,
+    "map": "https://goo.gl/maps/xyz11"
+  },
+  {
+    "id": 12,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Modern PG near Tibetology Centre",
+    "address": "Tibetology Centre, Gangtok, Sikkim",
+    "price": 1500,
+    "rating": 4,
+    "contact": 9876543320,
+    "map": "https://goo.gl/maps/xyz12"
+  },
+  {
+    "id": 13,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Cosy PG near White Hall",
+    "address": "White Hall, Gangtok, Sikkim",
+    "price": 2700,
+    "rating": 5,
+    "contact": 9876543330,
+    "map": "https://goo.gl/maps/xyz13"
+  },
+  {
+    "id": 14,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Budget PG near Palzor Stadium",
+    "address": "Palzor Stadium, Gangtok, Sikkim",
+    "price": 3200,
+    "rating": 4,
+    "contact": 9876543340,
+    "map": "https://goo.gl/maps/xyz14"
+  },
+  {
+    "id": 15,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "PG near Rumtek Monastery",
+    "address": "Rumtek Monastery, Gangtok, Sikkim",
+    "price": 4000,
+    "rating": 4,
+    "contact": 9876543350,
+    "map": "https://goo.gl/maps/xyz15"
+  },
+  {
+    "id": 16,
+    "image": "https://findyourpg.vercel.app/room1.jpeg",
+    "pgType": 1,
+    "pgName": "Economy PG near Tinkitam",
+    "address": "Tinkitam, Gangtok, Sikkim",
+    "price": 1000,
+    "rating": 3,
+    "contact": 9876543360,
+    "map": "https://goo.gl/maps/xyz16"
+  }
+]

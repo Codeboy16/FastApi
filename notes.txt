@@ -15,14 +15,47 @@ def student_det(id:int = Path(ge=1)):
 def student_det(id:int = Query()):
    return ("Hello")
 
+from typing import List
+subject: List[str] #Add only string List Data
 
+#Field validator it is used for more validation like in email you only want to allow specific email like @srmus.edu.im
+from pydantic import BaseModel,field_validator
+class Student(BaseModel):
+    id:int
+    email:EmailStr
+    @field_validator('email')  #This Is Know Decorators
+    @classmethod
+    def email_validator(cls,value):
+       valid_domain = ['@srmus.edu.in']
+       domain_name = value.split('@')[-1]
+       if domain_name not in Valid_domain:
+          raise ValueError('Not Valid Domain')
+        return value
 
+#Model Validator to add more than one validation we use this 
+from pydantic import BaseModel,model_validator
+class Student(BaseModel):
+    id:int
+    email:EmailStr
+    @model_validator(mode='after')  #This Is Know Decorators
+    def email_validator(cls,model): #in this model you will get all the class detail like int,email
+       if model.id <0 and 'email' not in model.email:
+            raise ValueError('Not Valid Email and iD')
+       retun model
 
+#computed Feild means that when user gives the some values height and weight but you don't want user to give bgmi value it is long issue to give for the user than with this computed Feild it will automaticall add that value
+from pydantic import BaseModel,computed_field
+class Student(BaseModel):
+     weight:float
+     height:float
 
+     @computed_field
+     @property
+     def calculate_bmi(self) -> float:
+          bmi = round(self.weight/(self.height**2),2)
+          return bmi
 
-
-
-
+print(Student.calculate_bmi)
 
 
 
@@ -39,3 +72,306 @@ def student_det(id:int = Query()):
 📦With routers: You split your endpoints into separate files or sections (like users, products, orders) — much cleaner and easier to manage.
 
 <Schema>=In FastAPI, a schema typically refers to a Pydantic model that defines the shape of the data (like a structure or blueprint). You use it to:Validate input (data from the user).
+Model Is a Folder were keep the Schema simple Model is folder inside that we keep schema files
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#best Pratices 
+✅ 1. Input Validation (Enhance Pydantic Schemas)
+Pydantic is great, but use it more strictly:
+
+Use Field(..., min_length=3, max_length=100) to validate strings.
+
+Validate formats (e.g., EmailStr for emails).
+
+Add regex constraints for fields like usernames or phone numbers.
+
+Use conint, confloat, etc. to restrict numeric ranges.
+
+Example:
+
+from pydantic import BaseModel, Field, EmailStr
+
+class UserCreate(BaseModel):
+    username: str = Field(..., min_length=3, max_length=30, regex="^[a-zA-Z0-9_-]+$")
+    email: EmailStr
+    password: str = Field(..., min_length=8)
+
+🔐 2. Add Authentication & Authorization
+Suggested approach: Use OAuth2 with JWT tokens.
+
+🔥 3. Prevent Common Attacks
+SQL Injection: Use ORM (like SQLAlchemy or Tortoise ORM) — never raw SQL.
+XSS / Injection: Sanitize input. Pydantic + escaping in templates (if using any).
+CORS: Configure allowed origins:
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://your-frontend.com"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+🧯 4. Handle Errors Gracefully
+Avoid exposing internal messages:
+
+from fastapi.responses import JSONResponse
+from fastapi.requests import Request
+from fastapi.exception_handlers import RequestValidationError
+@app.exception_handler(Exception)
+async def generic_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(status_code=500, content={"detail": "Internal server error"})
+
+🗝️ 5. Environment & Secret Management
+Use .env files and python-dotenv.
+
+Load with:
+from dotenv import load_dotenv
+load_dotenv()
+
+Never hardcode secrets like DB passwords or JWT keys.
+
+🚫 6. Rate Limiting & Throttling
+Install a package like slowapi:
+pip install slowapi
+And limit abuse per route:
+
+from fastapi import FastAPI, Request
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
+app = FastAPI()
+# Create a limiter that tracks users by IP address
+limiter = Limiter(key_func=get_remote_address)
+
+# Register error handler
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+@app.get("/")
+@limiter.limit("5/minute")  # Allow only 5 requests per minute
+async def homepage(request: Request):
+    return {"message": "Welcome!"}
+
+
+🔍 7. Logging & Monitoring
+Add logging for audit trails and errors:
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+For production: integrate with tools like Sentry, Prometheus, or Grafana.
+
+🧪 8. Add Unit Tests
+Use pytest with httpx.AsyncClient to test endpoints.
+
+Example test:
+from httpx import AsyncClient
+import pytest
+@pytest.mark.asyncio
+async def test_home():
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get("/")
+        assert response.status_code == 200
+
+🛠️ 9. Use a Better Project Structure
+Your current structure is OK, but for scaling:
+
+app/
+├── main.py
+├── models.py
+├── routes/
+│   ├── users.py
+│   └── auth.py
+├── schemas/
+│   ├── user.py
+│   └── auth.py
+├── services/
+│   └── user_service.py
+├── core/
+│   ├── config.py
+│   └── security.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##Pratice Api (Depends, JWT Auth, File Upload, Background task)
+🎯 Project Goal
+
+A simple User Registration System with:
+
+📄 User registration via form & file upload
+
+🔐 Secure JWT login system
+
+🛡️ Protected profile route
+
+📬 Background task to simulate sending a welcome email
+
+🛠️ Step 1: Project Setup
+
+Create a folder:
+
+mkdir fastapi-auth-demo
+cd fastapi-auth-demo
+
+
+Install dependencies:
+
+pip install fastapi uvicorn python-multipart python-jose[cryptography]
+
+
+Now create a file main.py.
+
+📦 Step 2: Code Structure
+
+We’ll build everything inside main.py for now.
+
+from fastapi import FastAPI, Form, UploadFile, File, Depends, HTTPException, BackgroundTasks
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from jose import jwt, JWTError
+from datetime import datetime, timedelta
+from typing import Optional
+
+app = FastAPI()
+
+# Secret key for JWT
+SECRET_KEY = "super-secret-key"
+ALGORITHM = "HS256"
+
+# Fake DB
+fake_db = {}
+
+# OAuth2 setup
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
+
+🧩 Step 3: User Registration with File Upload + Background Task
+def send_welcome_email(email: str):
+    with open("email_log.txt", "a") as f:
+        f.write(f"Welcome email sent to {email}\n")
+
+@app.post("/register")
+async def register_user(
+    background_tasks: BackgroundTasks,
+    username: str = Form(...),
+    password: str = Form(...),
+    email: str = Form(...),
+    file: UploadFile = File(...)
+):
+    # Save uploaded file
+    with open(f"uploads/{file.filename}", "wb") as f:
+        content = await file.read()
+        f.write(content)
+
+    # Save user to fake DB
+    if username in fake_db:
+        raise HTTPException(status_code=400, detail="Username already exists")
+    fake_db[username] = {"password": password, "email": email}
+
+    # Background task
+    background_tasks.add_task(send_welcome_email, email)
+
+    return {"message": f"User {username} registered"}
+
+🔐 Step 4: Login and Get JWT Token
+def create_token(data: dict, expires_minutes: int = 30):
+    expire = datetime.utcnow() + timedelta(minutes=expires_minutes)
+    data.update({"exp": expire})
+    return jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
+
+@app.post("/login")
+def login(form_data: OAuth2PasswordRequestForm = Depends()):
+    user = fake_db.get(form_data.username)
+    if not user or user["password"] != form_data.password:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+    token = create_token({"sub": form_data.username})
+    return {"access_token": token, "token_type": "bearer"}
+
+🔒 Step 5: Protected Profile Route
+def get_current_user(token: str = Depends(oauth2_scheme)):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username = payload.get("sub")
+        if username is None or username not in fake_db:
+            raise HTTPException(status_code=401, detail="Invalid token")
+        return username
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Token error")
+
+@app.get("/profile")
+def profile(user: str = Depends(get_current_user)):
+    return {"message": f"Welcome {user}"}
+
+🚀 Step 6: Run the App
+uvicorn main:app --reload
+
+Try in browser:
+
+POST /register using form-data with:
+
+username, password, email
+
+file: profile image (any file)
+
+POST /login (with username, password)
+
+Copy token and GET /profile with:
+
+Authorization: Bearer <your_token>
+
+✅ Summary
+
+You've now built a real-world mini API that includes:
+
+Depends() → for injecting login logic
+
+JWT Auth → secure user system
+
+File Upload + Form → profile photo + form fields
+
+BackgroundTasks → send welcome email (simulated)
