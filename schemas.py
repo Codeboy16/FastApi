@@ -1,4 +1,4 @@
-from pydantic import BaseModel,Field,StrictStr,EmailStr
+from pydantic import BaseModel,Field,StrictStr
 from typing import Optional
 
 
@@ -31,6 +31,5 @@ class PgListSchema(BaseModel):
      address: str
      price: int
      contact:int
-     image: list
      rating:int
 
