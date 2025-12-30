@@ -6,13 +6,18 @@ import json
 with open('data.json', 'r') as file:
     pgList = json.load(file)
 
+#Get All PG Details
+@router.get("/findpg")
+async def PgData():
+     random.shuffle(pgList)
+     return pgList
+
 #Top 5 Best Pg Gangtok
 @router.get("/findPg/topBestPg")
 async def topBestPg():
     sortedPgList = [pg for pg in pgList if pg['rating'] >=4 or pg['rating'] == 5 ]
     top_5_pg = random.sample(sortedPgList, 5) if len(sortedPgList) >= 5 else sortedPgList
     return top_5_pg
-
 
 #Search Paramater or Query Paramater
 @router.get("/findPg/search")

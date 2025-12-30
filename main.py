@@ -20,7 +20,7 @@ app.add_middleware(
 @app.get("/")
 async def read_root():
     return ({"Message": "Hello Dev! Fast Api Is Working", "Status": "Success",
-             "Api Routes": ["/student", "/teacher", "findPg/search?location=gangtok&budget=10000","/findPg/topBestPg"]})
+             "Api Routes": ["/student", "/teacher", "findPg/search?location=gangtok&budget=10000","/findPg/topBestPg","https://findyourpg.onrender.com/findpg"]})
 
 
 
